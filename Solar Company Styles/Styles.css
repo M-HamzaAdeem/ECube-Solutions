@@ -190,7 +190,7 @@ a.active, a:hover{
  }
 
 
-  .card-grid-item4 {
+  .card-grid-item3 {
     grid-row: 2 / 3; 
     grid-column: 2 / 4;
     font-weight: 400;
@@ -205,6 +205,7 @@ a.active, a:hover{
 .home-about-us {
     position: relative;
     margin: 60px 60px;
+
     /* Hide overflow to prevent text from being visible outside the container */
   }
   
@@ -227,7 +228,7 @@ a.active, a:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     opacity: 0; /* Start with opacity 0 */
-    animation: fade-in-text 1s forwards; /* Animation for the text */
+    /* animation: fade-in-text 1s forwards; Animation for the text */
     border-bottom: 5px solid rgb(0, 141, 12);
     overflow: hidden;
     
@@ -237,20 +238,27 @@ a.active, a:hover{
 .home-about-text p {
     font-size: 20px;
   }
-.home-about-text hr {
+  hr{
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 40px;
-    margin-left: 0;
+    
     border-radius: 5px;
     border: 0;
     border-top: 6px solid rgba(4, 163, 52, 0.986);
     opacity: 100%;
+
   }
-  .slide-in {
-    animation: slide-in-image 1s forwards;
+.home-about-text hr {
+  margin-left: 0;
   }
 
+  .slide-in {
+    animation: slide-in-image 1.5s forwards;
+  }
+  .fade-in{
+    animation: fade-in-text 1s forwards;
+  }
   @keyframes slide-in-image {
     from {
       transform: translateX(-100%); /* Starting position: outside the container on the left */
@@ -264,13 +272,43 @@ a.active, a:hover{
   
   @keyframes fade-in-text {
     from {
+        transform: translateX(100%);
       opacity: 0; /* Starting opacity: 0 */
     }
     to {
-      opacity: 1; /* Ending opacity: 1 */
+        
+      opacity: 1; /*
+       Ending opacity: 1 */
     }
   }
 
+  .services{
+    margin-top: 720px;
+    background-color: #b4b4b41f;
+  }
+  .services div{
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  .services h1{
+   margin-left: 0px;
+  }
+  .services hr {
+    margin-left: 0px;
+    }
+  .services  .row{
+    margin: 20px;
+    
+  }
+  .services  .row .col-md{
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  .services  .row .col-md img{
+    max-width: 50px ;
+    margin: 15px;
+  }
 
 @media (min-width: 700px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
@@ -278,8 +316,6 @@ a.active, a:hover{
   @media (min-width: 1150px) {
     .cards { grid-template-columns: repeat(4, 1fr); }
   }
-  
-
 
 @media (max-width: 1152px){
 
@@ -427,7 +463,10 @@ a.active, a:hover{
     display: flex; /* Change display to flex */
     flex-wrap: wrap; /* Enable wrapping of elements */
   }
+  .services{
+    margin-top: 20px;
 
+  }
   .home-about-us img {
     width: 100%; /* Set image width to 100% */
   }

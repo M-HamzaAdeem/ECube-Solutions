@@ -1,21 +1,30 @@
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    //   rect.bottom >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) ||
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
   
   function handleScroll() {
     const imgElement = document.querySelector('.slide-in-image');
+    const textElement = document.querySelector('.slide-in-text');
     if (isElementInViewport(imgElement)) {
       imgElement.classList.add('slide-in');
       if (isAnimationFinished(imgElement)) {
         window.removeEventListener('scroll', handleScroll);
       }
     }
+
+    if (isElementInViewport(textElement)) {
+    textElement.classList.add('fade-in');
+    if (isAnimationFinished(textElement)) {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
   }
   
   function isAnimationFinished(el) {
