@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    /* font-family: "Myriad Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" sans-serif; */
+    font-family: "Myriad Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" sans-serif;
 }
 .fas.fa-bars{
     color: rgb(5, 128, 5);
@@ -82,7 +82,7 @@ img {
 .cover-text-container{
     background-color: #0f851e;
     width: 40%;
-    height: 500px;
+    height: 50%;
     opacity: 70%;
     position: absolute;
     top: 135px; 
@@ -91,12 +91,12 @@ img {
 }
 .cover-text-container2{
     background-color: #0f851e;
-    width: 150px;
-    height: 120px;
+    width: 100px;
+    height: 80px;
     opacity: 70%;
     position: absolute;
-    top: 580px; 
-    left: 36%; 
+    top: 550px; 
+    left: 38%; 
 
 }
 .cover-text{
@@ -160,10 +160,12 @@ body { padding: 1rem; }
     margin-right: 2rem;
     position: relative;
     bottom: 40px;
-
-
   }
   
+  .home-aboutus-cards {
+    bottom: -60px;
+  }
+
 
 .grip-icon-plus{
     max-width: 40px;    
@@ -231,6 +233,70 @@ body { padding: 1rem; }
     color: #717171;
   }
 
+/* About us section home page*/
+.home-about-us {
+    position: relative;
+    margin: 60px 60px;
+    /* Hide overflow to prevent text from being visible outside the container */
+  }
+  
+  .home-about-us img {
+    width: 50%;
+    height: 580px;
+    position: absolute;
+    left: 5%; /* Start position: outside the container on the left */
+    animation: slide-in-image 1s forwards; /* Animation for the image */
+  }
+  
+  .home-about-text {
+    background-color: white;
+    position: absolute;
+    height: 540px;
+    top: 20px;
+    right: 0; /* Start position: outside the container on the right */
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    opacity: 0; /* Start with opacity 0 */
+    animation: fade-in-text 1s forwards; /* Animation for the text */
+    border-bottom: 5px solid rgb(0, 141, 12);
+    overflow: hidden;
+
+       
+}
+.home-about-text p {
+    font-size: 20px;
+  }
+.home-about-text hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 40px;
+    margin-left: 0;
+    border-radius: 5px;
+    border: 0;
+    border-top: 6px solid rgba(4, 163, 52, 0.986);
+    opacity: 100%;
+  }
+  
+  @keyframes slide-in-image {
+    from {
+      transform: translateX(-100%); /* Starting position: outside the container on the left */
+    }
+    to {
+      transform: translateX(0); /* Ending position: inside the container */
+    }
+  }
+  
+  @keyframes fade-in-text {
+    from {
+      opacity: 0; /* Starting opacity: 0 */
+    }
+    to {
+      opacity: 1; /* Ending opacity: 1 */
+    }
+  }
+
+
 @media (min-width: 700px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
   }
@@ -270,6 +336,9 @@ body { padding: 1rem; }
     
     
     }
+    .home-about-text p {
+        font-size: 18px;
+      }
 }
 @media (max-width: 952px){
     label.logo{
@@ -307,6 +376,9 @@ body { padding: 1rem; }
     
     
     }
+    .home-about-text p {
+        font-size: 15px;
+      }
 }
 
 @media (max-width: 858px){
@@ -376,6 +448,26 @@ body { padding: 1rem; }
 
 
 }
+
+.home-about-us {
+    display: flex; /* Change display to flex */
+    flex-wrap: wrap; /* Enable wrapping of elements */
+  }
+
+  .home-about-us img {
+    width: 100%; /* Set image width to 100% */
+  }
+
+  .home-about-text {
+    position: static; /* Reset position to static */
+    width: 90%; /* Set text width to 100% */
+    margin-left:10% ;
+
+    margin-top: 70%; /* Add margin to separate elements */
+  }
+  .home-about-text p {
+    font-size: 20px;
+  }
 }
 
 
