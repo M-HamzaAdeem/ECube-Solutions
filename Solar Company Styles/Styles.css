@@ -73,7 +73,7 @@ img {
   
   .slideshow-container img {
     width: 100%;
-    height: 70%px;
+    height: 70%;
     object-fit: cover;
     object-position: center;
   }
@@ -82,7 +82,7 @@ img {
 .cover-text-container{
     background-color: #0f851e;
     width: 40%;
-    height: 50%;
+    height: 70%;
     opacity: 70%;
     position: absolute;
     top: 135px; 
@@ -398,13 +398,14 @@ body { padding: 1rem; }
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #2c3e50;
+        background: #014227;
         top: 100px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
         float: right;
         margin-right: 20px;
+        z-index: 1;
 
     }
     nav ul li{
@@ -416,6 +417,7 @@ body { padding: 1rem; }
     }
     nav ul li a{
         font-size: 20px;
+        color: #ffffff;
     }
     a.active, a:hover{
         background: none;
@@ -468,6 +470,59 @@ body { padding: 1rem; }
   .home-about-text p {
     font-size: 20px;
   }
+}
+
+/* Mobile size media query */
+@media (max-width: 558px){
+
+    #top_gif_logo{
+        
+        top: 40px;
+    
+    }
+    .slideshow-container img {
+        height: 500px;
+      }
+    
+ .cover-text-container{
+    height: 380px;
+}
+ .cover-text-container2{  
+    top: 480px; 
+}
+
+ .home-about-us {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .home-about-us img {
+
+    position: static;
+  }
+
+  .home-about-text {
+    width: 90%; /* Set text width to 100% */
+    margin-left: 5%;
+    margin-top: -10%; /* Add margin to separate elements */
+  }
+    .home-about-text p {
+        font-size: 17px; 
+      }
+  
+  .btn-outline-light, .btn-light{
+    margin-top: 25px;
+    font-size: 15px;
+}
+.cards {
+
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    bottom: -1rem;
+  }
+
+
 }
 
 
