@@ -14,17 +14,18 @@ function isElementInViewport(el) {
     const textElement = document.querySelector('.slide-in-text');
     if (isElementInViewport(imgElement)) {
       imgElement.classList.add('slide-in');
+      textElement.classList.add('fade-in');
       if (isAnimationFinished(imgElement)) {
         window.removeEventListener('scroll', handleScroll);
       }
     } 
 
-    if (isElementInViewport(textElement)) {
-    textElement.classList.add('fade-in');
-    if (isAnimationFinished(textElement)) {
-      window.removeEventListener('scroll', handleScroll);
-    }
-  }
+    // if (isElementInViewport(textElement)) {
+    // textElement.classList.add('fade-in');
+    // if (isAnimationFinished(textElement)) {
+    //   window.removeEventListener('scroll', handleScroll);
+    // }
+  //}
   }
   
   function isAnimationFinished(el) {
