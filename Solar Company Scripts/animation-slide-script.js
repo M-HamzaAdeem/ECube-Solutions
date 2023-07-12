@@ -3,9 +3,9 @@ function isElementInViewport(el) {
     return (
     //   rect.bottom >= 0 &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) ||
+        rect.bottom  >= 0 &&
         rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.right  >= 0 
     );
   }
   
