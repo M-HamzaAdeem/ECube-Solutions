@@ -17,7 +17,7 @@ function isElementInViewport(el) {
       if (isAnimationFinished(imgElement)) {
         window.removeEventListener('scroll', handleScroll);
       }
-    }
+    } 
 
     if (isElementInViewport(textElement)) {
     textElement.classList.add('fade-in');
