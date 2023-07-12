@@ -9,23 +9,26 @@ function isElementInViewport(el) {
     );
   }
   
-  function handleScroll() {
+  function handleScrollAboutUs() {
     const imgElement = document.querySelector('.slide-in-image');
     const textElement = document.querySelector('.slide-in-text');
     if (isElementInViewport(imgElement)) {
       imgElement.classList.add('slide-in');
       textElement.classList.add('fade-in');
-      if (isAnimationFinished(imgElement)) {
+
+      if (isAnimationFinished(textElement)) {
         window.removeEventListener('scroll', handleScroll);
       }
-    } 
+    } }
 
-    // if (isElementInViewport(textElement)) {
-    // textElement.classList.add('fade-in');
-    // if (isAnimationFinished(textElement)) {
-    //   window.removeEventListener('scroll', handleScroll);
-    // }
-  //}
+    function handleScrollServices() {
+      const serviceElement = document.querySelector('.slide-down-services');
+    if (isElementInViewport(serviceElement)) {
+      serviceElement.classList.add('slide-down');
+    if (isAnimationFinished(serviceElement)) {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
   }
   
   function isAnimationFinished(el) {
@@ -39,5 +42,6 @@ function isElementInViewport(el) {
     );
   }
   
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScrollAboutUs);
+  window.addEventListener('scroll', handleScrollServices);
   

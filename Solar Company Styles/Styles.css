@@ -205,17 +205,19 @@ a.active, a:hover{
 .home-about-us {
     position: relative;
     margin: 60px 60px;
-
+    height: 580px;
     /* Hide overflow to prevent text from being visible outside the container */
   }
   
   .home-about-us img {
     width: 50%;
-    height: 580px;
+    max-height: 580px;
+    height: auto;
     position: absolute;
     left: 5%; /* Start position: outside the container on the left */
     opacity: 0;
     /* animation: slide-in-image 1s forwards; Animation for the image */
+    object-fit: cover;
   }
   
   .home-about-text {
@@ -236,7 +238,7 @@ a.active, a:hover{
        
 }
 .home-about-text p {
-    font-size: 20px;
+    font-size: 21px;
   }
   hr{
     margin-top: 1rem;
@@ -257,7 +259,7 @@ a.active, a:hover{
     animation: slide-in-image 1.5s forwards;
   }
   .fade-in{
-    animation: fade-in-text 1s forwards;
+    animation: slide-in-text 1s forwards;
   }
   @keyframes slide-in-image {
     from {
@@ -270,7 +272,7 @@ a.active, a:hover{
     }
   }
   
-  @keyframes fade-in-text {
+  @keyframes slide-in-text {
     from {
         transform: translateX(100%);
       opacity: 0; /* Starting opacity: 0 */
@@ -281,36 +283,108 @@ a.active, a:hover{
        Ending opacity: 1 */
     }
   }
-  
+
 
   .services{
-    margin-top: 720px;
+    margin-top: 100px;
     background-color: #b4b4b41f;
+    opacity: 50%;
   }
   .services div{
-    margin-left: 60px;
+    margin-left: 60px; 
     margin-right: 60px;
   }
-  .services h1{ 
-   margin-left: 0px;
+  .services .container{
+     margin-left: 0px;
   }
+  .services  h1 { 
+    font-size: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-variant: small-caps;
+  }
+  .services .container .row .col-lg { 
+   padding-top: 30px;}
+  .services .container .row .col-lg h2 { 
+   display: inline;
+   color: #5bab46;
+   font-size: 35px;
+  }
+  .services .container .row .col-lg p { 
+    margin-left: 85px;
+   }
   .services hr {
     margin-left: 0px;
     }
-  .services  .row{
-    margin: 20px;
-    
-  }
-  .services  .row .col-md{
+ 
+  .services  .row .col-lg{
     margin: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   }
-  .services  .row .col-md img{
+  .services  .row .col-lg img{
     max-width: 50px ;
     margin: 15px;
+    margin-top: -15px;
   }
 
+  .slide-down
+   {
+    animation: slide-down-services 1.5s forwards;
+  }
+
+  @keyframes slide-down-services {
+    from {
+      transform: translateY(-30%);
+      opacity: 0; /* Starting opacity: 0 */
+    }
+    to {
+        
+      opacity: 1; /*
+       Ending opacity: 1 */
+    }
+  }
+
+  .scope {
+    margin-top: 80px;
+    background-image: url("/Solar Company Images/solar-scope-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    overflow :hidden;
+
+  }
+  div.gallery  {
+    margin: 20px;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px 0 rgba(233, 233, 233, 0.781), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+  }
+  div.gallery img {
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  .scope h1{
+    margin-top: 40px;
+  }
+  div.desc {
+    padding: 15px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: black;
+
+  }
+  
+
+  .responsive {
+    width: 30%;
+    float: left;
+    /* border-radius: 80%; */
+  }
+ 
 @media (min-width: 700px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
   }
@@ -320,6 +394,7 @@ a.active, a:hover{
 
 @media (max-width: 1152px){
 
+  
     section.cover {
        
         height: calc(100vh - 20rem);
@@ -465,9 +540,14 @@ a.active, a:hover{
     flex-wrap: wrap; /* Enable wrapping of elements */
   }
   .services{
-    margin-top: 20px;
+    margin-top: 600px;
 
   }
+  .services div{
+    margin-left: 10px; 
+    margin-right: 20px;
+  }
+
   .home-about-us img {
     width: 100%; /* Set image width to 100% */
   }
@@ -480,6 +560,13 @@ a.active, a:hover{
   }
   .home-about-text p {
     font-size: 20px;
+  }
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+  .scope {
+    background-size: 300%;
   }
 }
 
@@ -533,8 +620,24 @@ a.active, a:hover{
 
     bottom: -1rem;
   }
+  .services div{
+    margin-left: 10px; 
+    margin-right: 20px;
+  }
+  .services .container .row .col-lg h2 { 
+    font-size: 25px;
+   }
 
-
+   .services  .row .col-lg img{
+    margin-top: 15px;
+  }
+  .scope {
+    background-size: 800%;
+  }
+  .responsive {
+    width: 90%;
+    margin-left:5%;
+  }
 }
   /* Mobile size media query */
   @media (max-width: 440px){
